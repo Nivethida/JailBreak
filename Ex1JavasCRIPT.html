@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>HeadFirst Ex1</title>
+
+    <script>
+
+        function jumpCalculator(jumpHeight,slipHeight,wallHeights){
+            var actualheight=jumpHeight-slipHeight;
+            var totalNoOfJumps =0;
+            for(var i=0;i<wallHeights.length;i++){
+             var noOfJumpsWall=wallHeights[i]/actualheight;
+             var roundedJumps = Math.ceil(noOfJumpsWall)
+                totalNoOfJumps+=roundedJumps;
+             console.log("jumps for "+wallHeights[i]+" wall :" + roundedJumps);
+            }
+            console.log("Total No Of Jumps" +totalNoOfJumps);
+
+        }
+    </script>
+</head>
+<body>
+<p>Enter the values</p>
+<input type="text" id="acatualJump" placeholder="Jump Height"><br>
+<input type="text" id="slipHeight" placeholder="Slip Height"><br>
+<input type="text" id="wallHeights" placeholder="Enter Walls sep by comas">
+<div style="background-color: aquamarine;height: 300px;width: 100px" onclick="jumpCalculator(5,1,[14,25,16])"></div>
+</body>
+</html>
